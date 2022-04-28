@@ -2,28 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+
 public class Asteroid : MonoBehaviour
 {
-    private Rigidbody _rigidbody;
-    public float thrust = 10f;
-    public float speed = 20.0f;
-    public float maxLifeTime = 30.0f;
     
-    private void Awake() {
-        //_rigidbody = GetComponent<Rigidbody>();
-        
-    }
+    public Rigidbody rb;
+
+    public float speed = 50.0f;
+    public float maxLifeTime = 30.0f;
+    Vector3 tempPos;
+    Collider asteroidCollider;
+    
     void Start()
     {
-       
-       //_rigidbody.AddForce(0,0, thrust);
+    
     }
 
-
+   private void OnTriggerEnter(Collider other) {
+       
+       if(other.gameObject.tag == "wall") {
+            tempPos = new Vector3(-transform.position.x ,-transform.position.y,-transform.position.z );
+            transform.position = tempPos; 
+       }
+    
+    }
   
-    public void SetTrajectory (Vector2 direction){
-        _rigidbody.AddForce(direction * this.speed);
-        Destroy(this.gameObject, this.maxLifeTime);
+    public void SetTrajectory (Vector3 direction){
+        rb.AddForce(direction * this.speed);
     }
 
     public void Destroy(){
