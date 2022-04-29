@@ -128,3 +128,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 100
+  speed: 20
+  maxLifeTime: 30

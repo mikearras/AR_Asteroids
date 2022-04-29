@@ -31,4 +31,8 @@ public class Asteroid : MonoBehaviour
 
     }
 
+    public void takeDamage(){
+        Destroy(this.gameObject, 1f);
+    }
+
 }
