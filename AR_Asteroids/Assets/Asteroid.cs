@@ -1,11 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-
-
-
-public class Asteroid : MonoBehaviour
 {
     
     public Rigidbody rb;
@@ -19,23 +11,3 @@ public class Asteroid : MonoBehaviour
     {
     
     }
-
-   private void OnTriggerEnter(Collider other) {
-       
-       if(other.gameObject.tag == "wall") {
-            tempPos = new Vector3(-transform.position.x ,-transform.position.y,-transform.position.z );
-            transform.position = tempPos; 
-       }
-    
-    }
-  
-    public void SetTrajectory (Vector3 direction){
-        rb.AddForce(direction * this.speed);
-    }
-
-    public void Destroy(){
-        Destroy(this.gameObject, this.maxLifeTime);
-
-    }
-
-}

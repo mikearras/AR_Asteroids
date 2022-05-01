@@ -127,8 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e5fec4b4aac4776a1613e91be678ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxThrust: 10
-  maxTorque: 100
   rb: {fileID: 6800690312300498556}
-  speed: 10
+  maxSpeed: 20
+  minSpeed: 5
   maxLifeTime: 30

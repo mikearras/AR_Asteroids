@@ -5,19 +5,20 @@ using UnityEngine;
 public class AsteroidSpawner : MonoBehaviour
 {
     public Asteroid asteroidPrefab;
-    
+
     public float trajectoryVariance = 15.0f; 
-    public int spawnAmount = 5;
+    public int spawnAmount = 100;
     public float spawnDistance = 15;
    
     void Start()
     {
         
-        Spawn();
+        StartCoroutine(Spawn());
        
     }
 
-    private void Spawn(){
+    private IEnumerator Spawn(){
+
         for(int i = 0; i < this.spawnAmount; i++){
             Vector3 orientation = new Vector3 (1,1,1);
             Vector3 spawnDirection = Random.insideUnitSphere.normalized * this.spawnDistance;
@@ -44,6 +45,7 @@ public class AsteroidSpawner : MonoBehaviour
             Vector3 spawnPoint = this.transform.position + spawnDirection;
             float variance = Random.Range(-this.trajectoryVariance, this.trajectoryVariance);
             Quaternion rotation = Quaternion.AngleAxis(variance, orientation);
+            yield return new WaitForSeconds(Random.Range(2,10));
             Asteroid asteroid = Instantiate(this.asteroidPrefab, spawnPoint, rotation);
             asteroid.SetTrajectory(rotation * -spawnDirection);
             
