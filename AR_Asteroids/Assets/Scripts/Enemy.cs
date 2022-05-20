@@ -17,11 +17,10 @@ public class Enemy : MonoBehaviour
     public float fireRate;
     public float fireCount;
 
-    public bool isAttacked;
-    private bool isChasing;
-    public float distanceToChase = 10f;
-
     private Vector3 targetPoint;
+
+    public int enemyHealth  = 3; // take 3 shots to kill an enemy
+    public Rigidbody _therigidbody;
 
     void Start()
     {
@@ -36,26 +35,28 @@ public class Enemy : MonoBehaviour
         var rotation = Quaternion.LookRotation(ARCamera.transform.position - transform.position);
         //does linear interpolation (curve fitting)
         this.transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotation_damping);
-        if (!isChasing) {
-            if(Vector3.Distance(this.transform.position, ARCamera.transform.position) < distanceToChase) {
-                isChasing = true;
-            }
+        
+        targetPoint = ARCamera.transform.position;
+        targetPoint.y = transform.position.y;
+        if(Vector3.Distance(this.transform.position, targetPoint) < 20f && Vector3.Distance(this.transform.position, targetPoint) > 10f) {
+            this.transform.LookAt(targetPoint);
+            _therigidbody.velocity = transform.forward * speed;
         } else {
-            this.transform.LookAt(ARCamera.transform.position);
-            if(Vector3.Distance(this.transform.position, ARCamera.transform.position) > distanceToChase) {
-                isChasing = false;
-            }
+            _therigidbody.velocity = transform.forward * 0;
         }
         
-        
-
-
         fireCount -= Time.deltaTime;
         if (fireCount <= 0) {
             fireCount = fireRate;
             Instantiate(fireBall, firePoint.position, firePoint.rotation);
         }
 
+    }
 
+    public void takeDamage() {
+        enemyHealth--;
+        if (enemyHealth <= 0) {
+            Destroy(gameObject);
+        }
     }
 }
