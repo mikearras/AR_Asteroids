@@ -10,6 +10,13 @@ public class Asteroid : MonoBehaviour
     
     public Rigidbody rb;
 
+    public Asteroid Prefab1;
+    public Asteroid Prefab2;
+    public Asteroid Prefab3;
+    public Asteroid Prefab4;
+
+     List<Asteroid> prefabList = new List<Asteroid>();
+
     public float maxSpeed = 20.0f;
     public float minSpeed = 5;
     public float maxLifeTime = 30.0f;
@@ -59,12 +66,19 @@ public class Asteroid : MonoBehaviour
     }
 
     public void splitAsteroid(){
+
+        prefabList.Add(Prefab1);
+        prefabList.Add(Prefab2);
+        prefabList.Add(Prefab3);
+        prefabList.Add(Prefab4);
+        int prefabIndex = UnityEngine.Random.Range(0,4);
+    
         Vector3 orientation = new Vector3 (1,1,1);
         float variance = Random.Range(-this.trajectoryVariance, this.trajectoryVariance);
         Vector3 position = this.transform.position;
         Quaternion rotation = Quaternion.AngleAxis(variance, orientation);
         position += Random.insideUnitSphere * .5f;
-        Asteroid half = Instantiate(this, position, rotation);
+        Asteroid half = Instantiate(prefabList[prefabIndex], position, rotation);
         half.size = this.size * .5f;
         half.SetTrajectory(Random.insideUnitSphere.normalized);
     }

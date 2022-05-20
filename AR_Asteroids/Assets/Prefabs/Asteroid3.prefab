@@ -115,6 +115,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8407907528884362800}
+  Prefab1: {fileID: 5271462227160461136, guid: 42d19bb6378524fb29fd1004c61b66e4, type: 3}
+  Prefab2: {fileID: 2711548384702380747, guid: 94f54472e6f8044f2bfbe19287ed040a, type: 3}
+  Prefab3: {fileID: 8407907528884362815}
+  Prefab4: {fileID: 1318943648751173855, guid: 023895678aed34a32a25f2870d67fc09, type: 3}
   maxSpeed: 20
   minSpeed: 5
   maxLifeTime: 30
