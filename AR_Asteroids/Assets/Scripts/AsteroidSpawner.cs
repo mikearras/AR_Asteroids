@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class AsteroidSpawner : MonoBehaviour
 {
-    public Asteroid asteroidPrefab;
+
+    List<Asteroid> prefabList = new List<Asteroid>();
+    public Asteroid Prefab1;
+    public Asteroid Prefab2;
+    public Asteroid Prefab3;
+    public Asteroid Prefab4;
 
     public float trajectoryVariance = 5.0f; 
     public int spawnAmount = 100;
@@ -12,14 +17,21 @@ public class AsteroidSpawner : MonoBehaviour
    
     void Start()
     {
+       
+        
         
         StartCoroutine(Spawn());
        
     }
 
     private IEnumerator Spawn(){
-
+        prefabList.Add(Prefab1);
+        prefabList.Add(Prefab2);
+        prefabList.Add(Prefab3);
+        prefabList.Add(Prefab4);
+       
         for(int i = 0; i < this.spawnAmount; i++){
+            int prefabIndex = UnityEngine.Random.Range(0,4);
             //This section allows the incoming asteroids to spawn on the edge of 
             //an invisible sphere that surrounds the player.  The size of the sphere is 
             //determined by spawnDistance
@@ -41,7 +53,7 @@ public class AsteroidSpawner : MonoBehaviour
                 spawnDirection.z *= -1;
             }
             else if(spawnDirection.z < 5){
-                    spawnDirection.z  += 5;
+                spawnDirection.z  += 5;
             }
         
 
@@ -52,7 +64,7 @@ public class AsteroidSpawner : MonoBehaviour
             float variance = Random.Range(-this.trajectoryVariance, this.trajectoryVariance);
             Quaternion rotation = Quaternion.AngleAxis(variance, orientation);
             yield return new WaitForSeconds(Random.Range(2,10));
-            Asteroid asteroid = Instantiate(this.asteroidPrefab, spawnPoint, rotation);
+            Asteroid asteroid = Instantiate(prefabList[prefabIndex], spawnPoint, rotation);
             asteroid.SetTrajectory(rotation * -spawnDirection);
             
 

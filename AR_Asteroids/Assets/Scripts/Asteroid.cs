@@ -7,10 +7,10 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
-
+    
     public Rigidbody rb;
 
-    public float maxSpeed = 50.0f;
+    public float maxSpeed = 20.0f;
     public float minSpeed = 5;
     public float maxLifeTime = 30.0f;
     public float size = 1.0f;
@@ -18,6 +18,7 @@ public class Asteroid : MonoBehaviour
     public float small = .25f;
     public float medium = .50f;
 
+    public float trajectoryVariance = 5.0f;
 
    public int hitCounter = 0;
 
@@ -29,7 +30,9 @@ public class Asteroid : MonoBehaviour
 
     void Start()
     {
+        
          //Put spin on asteroids at random amounts on every axis
+        
         Vector3 torque = new Vector3(Random.Range(0.0f, 10), Random.Range(0.0f, 10), Random.Range(0.0f, 10));
         rb.AddTorque(torque);
         this.transform.localScale = Vector3.one * size;
@@ -56,9 +59,12 @@ public class Asteroid : MonoBehaviour
     }
 
     public void splitAsteroid(){
+        Vector3 orientation = new Vector3 (1,1,1);
+        float variance = Random.Range(-this.trajectoryVariance, this.trajectoryVariance);
         Vector3 position = this.transform.position;
+        Quaternion rotation = Quaternion.AngleAxis(variance, orientation);
         position += Random.insideUnitSphere * .5f;
-        Asteroid half = Instantiate(this, position, this.transform.rotation);
+        Asteroid half = Instantiate(this, position, rotation);
         half.size = this.size * .5f;
         half.SetTrajectory(Random.insideUnitSphere.normalized);
     }
