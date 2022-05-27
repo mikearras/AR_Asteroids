@@ -59,9 +59,10 @@ public class Asteroid : MonoBehaviour
        {
            splitAsteroid();
            splitAsteroid();
-           
+           FindObjectOfType<GameManager1>().asteroidHit(this);
        }
        Destroy(this.gameObject);
+       FindObjectOfType<GameManager1>().asteroidHit(this);
        
     }
 
