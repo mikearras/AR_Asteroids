@@ -49,6 +49,7 @@ public class Asteroid : MonoBehaviour
     {
         //Give each asteroid a random speed between 
         rb.AddForce(direction * Random.Range(this.minSpeed, this.maxSpeed));
+        Destroy(this.gameObject, maxLifeTime);
     }
 
     public void takeDamage()

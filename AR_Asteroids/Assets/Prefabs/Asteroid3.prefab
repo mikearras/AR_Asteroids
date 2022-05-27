@@ -121,7 +121,7 @@ MonoBehaviour:
   Prefab4: {fileID: 1318943648751173855, guid: 023895678aed34a32a25f2870d67fc09, type: 3}
   maxSpeed: 20
   minSpeed: 5
-  maxLifeTime: 30
+  maxLifeTime: 10
   size: 1
   large: 1
   small: 0.25
