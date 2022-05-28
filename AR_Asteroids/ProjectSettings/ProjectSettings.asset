@@ -157,7 +157,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    iPhone: com.mikearras.AR-Asteroids
+    iPhone: com.mikearras.AR-Asteroids-5-27-22
   buildNumber:
     Standalone: 0
     iPhone: 0
