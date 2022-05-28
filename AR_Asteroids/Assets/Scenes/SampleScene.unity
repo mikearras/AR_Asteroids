@@ -883,6 +883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a86fb99eb82b34408868899f826966b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 879887245}
   score: 0
   explosion: {fileID: 1807374532}
 --- !u!1 &1301320229
