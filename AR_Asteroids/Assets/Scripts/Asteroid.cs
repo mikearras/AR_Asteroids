@@ -29,6 +29,9 @@ public class Asteroid : MonoBehaviour
 
    public int hitCounter = 0;
 
+
+    
+
     ///targetSize = asteroidSize.big;
     Vector3 tempPos;
 
@@ -43,6 +46,8 @@ public class Asteroid : MonoBehaviour
         Vector3 torque = new Vector3(Random.Range(0.0f, 10), Random.Range(0.0f, 10), Random.Range(0.0f, 10));
         rb.AddTorque(torque);
         this.transform.localScale = Vector3.one * size;
+        
+         
     }
 
     public void SetTrajectory(Vector3 direction)
@@ -54,21 +59,21 @@ public class Asteroid : MonoBehaviour
 
     public void takeDamage()
     {
-
        
+        
        if(this.size * .5f >= small)
        {
            splitAsteroid();
            splitAsteroid();
            FindObjectOfType<GameManager1>().asteroidHit(this);
        }
-       Destroy(this.gameObject);
-       FindObjectOfType<GameManager1>().asteroidHit(this);
+      
        
+       FindObjectOfType<GameManager1>().asteroidHit(this);
+       Destroy(this.gameObject);
     }
 
     public void splitAsteroid(){
-
         prefabList.Add(Prefab1);
         prefabList.Add(Prefab2);
         prefabList.Add(Prefab3);
