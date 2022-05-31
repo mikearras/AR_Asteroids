@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a86fb99eb82b34408868899f826966b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 2769767633164783878, guid: 7eb40735c090d462d9022096bc84f801, type: 3}
   score: 0
   explosion: {fileID: 7632993498006195840, guid: ae594b90869704fd19ae0b11b3362e5e, type: 3}
   enemyExplosion: {fileID: 743399474627658555, guid: cf211962f9e634124951e7d027dcc612, type: 3}

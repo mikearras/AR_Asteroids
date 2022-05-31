@@ -8,9 +8,8 @@ public class playerShoot : MonoBehaviour {
 	public Button playerShootButton;									// Reference the UI shoot button
 	public Camera fpsCamera;											// Reference the AR camera
 	public float fireRate = 0.25f;										// How often can the player fire
-	public float weaponRange = 150f;
-	public Transform weaponEnd;										// How far can the player fire
-												// Reference to the UI player weapon
+	public float weaponRange = 150f;									// How far can the player fire
+	public Transform weaponEnd;											// Reference to the UI player weapon
 
 	private WaitForSeconds shotDuration = new WaitForSeconds(0.07f);	// How long the laser will be visible
 	private AudioSource gunAudio;										// Reference the laser sound effect
@@ -75,8 +74,8 @@ public class playerShoot : MonoBehaviour {
 		}
 		else
 		{
-			// If we did not hit anything, set the end of the line to a position directly in front of the camera at the distance of weaponRange
-			laserLine.SetPosition (1, rayOrigin + (fpsCamera.transform.forward * weaponRange));
+		 	// If we did not hit anything, set the end of the line to a position directly in front of the camera at the distance of weaponRange
+		 	laserLine.SetPosition (1, rayOrigin + (fpsCamera.transform.forward * weaponRange));
 		}
 	}
 
