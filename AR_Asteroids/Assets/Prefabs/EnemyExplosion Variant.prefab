@@ -29,15 +29,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7632993498006195841, guid: ae594b90869704fd19ae0b11b3362e5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.5216866
+      value: 0.7056111
       objectReference: {fileID: 0}
     - target: {fileID: 7632993498006195841, guid: ae594b90869704fd19ae0b11b3362e5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9790405
+      value: 0.7665914
       objectReference: {fileID: 0}
     - target: {fileID: 7632993498006195841, guid: ae594b90869704fd19ae0b11b3362e5e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.287243
+      value: 11.559853
       objectReference: {fileID: 0}
     - target: {fileID: 7632993498006195841, guid: ae594b90869704fd19ae0b11b3362e5e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7632993498006195846, guid: ae594b90869704fd19ae0b11b3362e5e, type: 3}
       propertyPath: m_Name
-      value: EnemyExplosion
+      value: EnemyExplosion Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7632993498006195847, guid: ae594b90869704fd19ae0b11b3362e5e, type: 3}
       propertyPath: m_Mesh
