@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class GameManager1 : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class GameManager1 : MonoBehaviour
     public AudioSource explosionSound2;
     public AudioSource explosionSound3;
     public AudioSource explosionSound4;
+
+    public Player player;
 
 
     public void enemyHit(Enemy enemy)
@@ -67,11 +70,17 @@ public class GameManager1 : MonoBehaviour
     void Start()
     {
         explosionSound = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         scoreText.text = (score.ToString());
+        if(player.health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+
     }
 }
