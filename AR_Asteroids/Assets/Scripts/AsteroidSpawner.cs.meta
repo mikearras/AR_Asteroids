@@ -4,9 +4,10 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - Prefab1: {fileID: 1139863988929321600, guid: 328fde95564c54254bfff713a4f4bd83, type: 3}
-  - Prefab2: {fileID: 9025539372596560191, guid: 899f3dbbad0344e249bd5c597a9162ba, type: 3}
-  - Prefab3: {fileID: 6273002932696928193, guid: 42e29a715f2e04069b8acdcff54db918, type: 3}
+  - Prefab1: {fileID: 5271462227160461136, guid: 42d19bb6378524fb29fd1004c61b66e4, type: 3}
+  - Prefab2: {fileID: 2711548384702380747, guid: 94f54472e6f8044f2bfbe19287ed040a, type: 3}
+  - Prefab3: {fileID: 8407907528884362815, guid: c89ba547df9e3457384442e5aea69d8d, type: 3}
+  - Prefab4: {fileID: 1318943648751173855, guid: 023895678aed34a32a25f2870d67fc09, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

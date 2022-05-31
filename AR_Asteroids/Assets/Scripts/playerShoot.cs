@@ -9,7 +9,7 @@ public class playerShoot : MonoBehaviour {
 	public Camera fpsCamera;											// Reference the AR camera
 	public float fireRate = 0.25f;										// How often can the player fire
 	public float weaponRange = 150f;										// How far can the player fire
-	public Transform weaponEnd;											// Reference to the UI player weapon
+	//public Transform weaponEnd;											// Reference to the UI player weapon
 
 	private WaitForSeconds shotDuration = new WaitForSeconds(0.07f);	// How long the laser will be visible
 	private AudioSource gunAudio;										// Reference the laser sound effect
@@ -19,7 +19,7 @@ public class playerShoot : MonoBehaviour {
 	// Initialization
 	void Start () {
 		// Get and store a reference to our LineRenderer component
-		laserLine = GetComponent<LineRenderer>();
+		//laserLine = GetComponent<LineRenderer>();
 
 		// Get and store a reference to our AudioSource component
 		gunAudio = GetComponent<AudioSource>();
@@ -39,18 +39,18 @@ public class playerShoot : MonoBehaviour {
 		StartCoroutine (ShotEffect());
 
 		// Create a vector at the center of our camera's viewport
-		Vector3 rayOrigin = fpsCamera.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f));
+		//Vector3 rayOrigin = fpsCamera.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f));
 
 		// Declare a raycast hit to store information about what our raycast has hit
 		RaycastHit hit;
 
 		// Set the start position for our visual effect for our laser to the position of weaponEnd
-		laserLine.SetPosition (0, weaponEnd.position);
+		//laserLine.SetPosition (0, weaponEnd.position);
 
 		if (Physics.Raycast (fpsCamera.transform.position, fpsCamera.transform.forward, out hit, weaponRange)) 
 		{
 			// Set the end position for our laser line 
-			laserLine.SetPosition (1, hit.point);
+			//laserLine.SetPosition (1, hit.point);
 
 			// Get a reference to the asteroid target
 			Asteroid target = hit.transform.GetComponent<Asteroid> ();
@@ -67,11 +67,11 @@ public class playerShoot : MonoBehaviour {
 
 			
 		}
-		else
-		{
-			// If we did not hit anything, set the end of the line to a position directly in front of the camera at the distance of weaponRange
-			laserLine.SetPosition (1, rayOrigin + (fpsCamera.transform.forward * weaponRange));
-		}
+		// else
+		// {
+		// 	// If we did not hit anything, set the end of the line to a position directly in front of the camera at the distance of weaponRange
+		// 	laserLine.SetPosition (1, rayOrigin + (fpsCamera.transform.forward * weaponRange));
+		// }
 	}
 
 	private IEnumerator ShotEffect() 
@@ -80,12 +80,12 @@ public class playerShoot : MonoBehaviour {
 		gunAudio.Play ();
 
 		// Turn on our line renderer
-		laserLine.enabled = true;
+		//laserLine.enabled = true;
 
 		// Wait for .07 seconds
 		yield return shotDuration;
 
 		// Deactivate our line renderer after waiting
-		laserLine.enabled = false;
+		//laserLine.enabled = false;
 	}
 }
