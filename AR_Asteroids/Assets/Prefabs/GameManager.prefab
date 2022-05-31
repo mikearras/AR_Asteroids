@@ -50,7 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
   score: 0
-  explosion: {fileID: 0}
+  explosion: {fileID: 7632993498006195840, guid: ae594b90869704fd19ae0b11b3362e5e, type: 3}
+  enemyExplosion: {fileID: 743399474627658555, guid: cf211962f9e634124951e7d027dcc612, type: 3}
   explosionSound1: {fileID: 2649688725459586062}
   explosionSound2: {fileID: 2649688725459586061}
   explosionSound3: {fileID: 2649688725459586060}

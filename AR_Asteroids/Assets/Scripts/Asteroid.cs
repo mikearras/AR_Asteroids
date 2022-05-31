@@ -25,6 +25,8 @@ public class Asteroid : MonoBehaviour
     public float small = .25f;
     public float medium = .50f;
 
+   
+
     public float trajectoryVariance = 5.0f;
 
    public int hitCounter = 0;
@@ -65,11 +67,11 @@ public class Asteroid : MonoBehaviour
        FindObjectOfType<GameManager1>().asteroidHit(this);
        Destroy(this.gameObject);
        
-
        
     }
 
     public void splitAsteroid(){
+       
 
         prefabList.Add(Prefab1);
         prefabList.Add(Prefab2);
