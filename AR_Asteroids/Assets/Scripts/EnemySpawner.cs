@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
             Vector3 spawnPoint = this.transform.position + spawnDirection;
             Enemy enemy_ = Instantiate(enemy1, spawnPoint, Quaternion.identity);
             enemy_.ARCamera = ARCamera;
-            yield return new WaitForSeconds(Random.Range(5,20));
+            yield return new WaitForSeconds(Random.Range(20,30));
             enemyCount += 1;
         }
 

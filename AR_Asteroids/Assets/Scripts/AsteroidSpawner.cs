@@ -11,6 +11,8 @@ public class AsteroidSpawner : MonoBehaviour
     public Asteroid Prefab3;
     public Asteroid Prefab4;
 
+    List<float> sizesList = new List<float>();
+
     public float trajectoryVariance = 5.0f; 
     public int spawnAmount = 100;
     public float spawnDistance = 15;
@@ -29,6 +31,11 @@ public class AsteroidSpawner : MonoBehaviour
         prefabList.Add(Prefab2);
         prefabList.Add(Prefab3);
         prefabList.Add(Prefab4);
+
+        sizesList.Add(1f);
+        sizesList.Add(.5f);
+        sizesList.Add(.25f);
+
        
         for(int i = 0; i < this.spawnAmount; i++){
             int prefabIndex = UnityEngine.Random.Range(0,4);
@@ -65,6 +72,8 @@ public class AsteroidSpawner : MonoBehaviour
             Quaternion rotation = Quaternion.AngleAxis(variance, orientation);
             yield return new WaitForSeconds(Random.Range(2,10));
             Asteroid asteroid = Instantiate(prefabList[prefabIndex], spawnPoint, rotation);
+            int sizeIndex = UnityEngine.Random.Range(0,3);
+            asteroid.size = sizesList[sizeIndex];
             asteroid.SetTrajectory(rotation * -spawnDirection);
             
 
