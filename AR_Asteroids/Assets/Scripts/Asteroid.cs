@@ -54,14 +54,18 @@ public class Asteroid : MonoBehaviour
     public void takeDamage()
     {
 
-       
-       if(this.size * .5f >= small)
+        if(this.size * .5f >= small)
        {
            splitAsteroid();
            splitAsteroid();
-           
+           FindObjectOfType<GameManager1>().asteroidHit(this);
        }
+      
+       
+       FindObjectOfType<GameManager1>().asteroidHit(this);
        Destroy(this.gameObject);
+       
+
        
     }
 

@@ -118,7 +118,7 @@ MonoBehaviour:
   Prefab1: {fileID: 5271462227160461136}
   Prefab2: {fileID: 2711548384702380747, guid: 94f54472e6f8044f2bfbe19287ed040a, type: 3}
   Prefab3: {fileID: 8407907528884362815, guid: c89ba547df9e3457384442e5aea69d8d, type: 3}
-  Prefab4: {fileID: 1318943648751173855, guid: 023895678aed34a32a25f2870d67fc09, type: 3}
+  Prefab4: {fileID: 9181776399901583327, guid: 023895678aed34a32a25f2870d67fc09, type: 3}
   maxSpeed: 20
   minSpeed: 5
   maxLifeTime: 30

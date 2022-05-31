@@ -76,8 +76,10 @@ public class Enemy : MonoBehaviour
 
     public void takeDamage() {
         enemyHealth--;
+        
         if (enemyHealth <= 0) {
-            Destroy(gameObject);
+           FindObjectOfType<GameManager1>().enemyHit(this);
+           Destroy(this.gameObject);
         }
     }
 }
