@@ -985,6 +985,7 @@ MonoBehaviour:
   fpsCamera: {fileID: 1835914736}
   fireRate: 0.25
   weaponRange: 150
+  weaponEnd: {fileID: 976101174}
 --- !u!120 &1232989931
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -992,7 +993,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232989928}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1005,7 +1006,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1315,6 +1316,7 @@ MonoBehaviour:
   fpsCamera: {fileID: 1835914736}
   fireRate: 0.25
   weaponRange: 150
+  weaponEnd: {fileID: 1703485636}
 --- !u!120 &1330076569
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1322,7 +1324,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330076566}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1335,7 +1337,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2267,7 +2269,6 @@ GameObject:
   - component: {fileID: 2105550956}
   - component: {fileID: 2105550955}
   - component: {fileID: 2105550958}
-  - component: {fileID: 2105550959}
   m_Layer: 5
   m_Name: playerShootButton
   m_TagString: Untagged
@@ -2485,19 +2486,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2105550959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105550953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8eb45a27e98f44f8b362cfce27917a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerShootButton: {fileID: 2105550955}
-  fpsCamera: {fileID: 1835914736}
-  fireRate: 0.25
-  weaponRange: 150
