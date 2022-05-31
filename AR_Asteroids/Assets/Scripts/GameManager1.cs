@@ -79,6 +79,7 @@ public class GameManager1 : MonoBehaviour
         scoreText.text = (score.ToString());
         if(player.health <= 0)
         {
+            AudioManager.instance.StopBGM();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
 
