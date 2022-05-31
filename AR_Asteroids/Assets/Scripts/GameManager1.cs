@@ -10,12 +10,29 @@ public class GameManager1 : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public int score = 0;
     public ParticleSystem explosion;
+    public ParticleSystem enemyExplosion;
     private AudioSource explosionSound;
     List<AudioSource> sourceList = new List<AudioSource>();
     public AudioSource explosionSound1;
     public AudioSource explosionSound2;
     public AudioSource explosionSound3;
     public AudioSource explosionSound4;
+
+
+    public void enemyHit(Enemy enemy)
+    {
+
+        this.score += 100;
+        this.enemyExplosion.transform.position = enemy.transform.position;
+        this.enemyExplosion.Play();
+        sourceList.Add(explosionSound1);
+        sourceList.Add(explosionSound2);
+        sourceList.Add(explosionSound3);
+        sourceList.Add(explosionSound4);
+        int explosionSoundIndex = UnityEngine.Random.Range(0,4);
+        sourceList[explosionSoundIndex].Play();
+
+    }
 
 
     public void asteroidHit(Asteroid asteroid)

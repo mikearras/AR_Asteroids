@@ -53,16 +53,20 @@ public class playerShoot : MonoBehaviour {
 			//laserLine.SetPosition (1, hit.point);
 
 			// Get a reference to the asteroid target
-			Asteroid target = hit.transform.GetComponent<Asteroid> ();
+			Asteroid target = hit.transform.GetComponent<Asteroid>();
+			Enemy enemyTarget = hit.transform.GetComponent<Enemy>();
 
 			if (target != null) 
 			{
-				// If we hit an asteroid, destroy the asteroid
-				// TODO: Figure out how the asteroid splits and implement incremental damage
+
 				target.hitCounter++;
-				Debug.Log(target.hitCounter);
 				target.takeDamage();
+
 				
+			}
+			else if (enemyTarget != null)
+			{	
+				enemyTarget.takeDamage();
 			}
 
 			

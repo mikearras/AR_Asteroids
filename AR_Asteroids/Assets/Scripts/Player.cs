@@ -14,9 +14,6 @@ public class Player : MonoBehaviour
 
         this.health -= 10;
         healthbar.setHealth(this.health);
-        if (other.gameObject.tag == "asteroid")
-        {
-            Debug.Log("hit by asteroid");
-        }
+      
     }
 }
