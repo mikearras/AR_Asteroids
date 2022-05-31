@@ -21,10 +21,9 @@ public class Enemy : MonoBehaviour
     private int leftMoveCounter = 0;
     private int rightMoveCounter = 0;
     private int MAX_MOVES = 5000;
-
-    //waiting in between firing
-    public float waitTime, shootTime = 1f;
-    private float waitCounter, timeCounter;
+    private float timeBetweenShots = 30.0f;
+    private float MAX_FIREBALLS = 2;
+    private float numFireballs = 0;
 
     private Vector3 targetPoint;
 
@@ -67,9 +66,16 @@ public class Enemy : MonoBehaviour
         }
         
         fireCount -= Time.deltaTime;
-        if (fireCount <= 0) {
+        if (fireCount <= 0 && numFireballs < MAX_FIREBALLS) {
             fireCount = fireRate;
             Instantiate(fireBall, firePoint.position, firePoint.rotation);
+            numFireballs++;
+        } else {
+            timeBetweenShots -= Time.deltaTime;
+            if (timeBetweenShots < 0) {
+                numFireballs = 0;
+                timeBetweenShots = 30.0f;
+            }
         }
 
     }
